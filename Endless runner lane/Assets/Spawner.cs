@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject obstacle;
+    public GameObject Obstacle;
 
     public float timeBtwSpawn;
     public float startTimeBtwSpawn;
@@ -15,13 +15,12 @@ public class Spawner : MonoBehaviour
     {
         if (timeBtwSpawn <= 0) 
         {
-            Instantiate(obstacle, transform.position, Quaternion.identity);
+            Instantiate(Obstacle, transform.position, Quaternion.identity);
             timeBtwSpawn = startTimeBtwSpawn;
-            if (startTimeBtwSpawn > minTime)
-            {
+            if (startTimeBtwSpawn > minTime) {
                 startTimeBtwSpawn -= decreaseTime;
             }
-            
+
         }
         else {
             timeBtwSpawn -= Time.deltaTime;
