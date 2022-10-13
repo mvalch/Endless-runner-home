@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 
@@ -14,9 +15,14 @@ public class Player : MonoBehaviour
 
    public int health = 3;
 
+   public Text healthDisplay;
+
    private void Update()
    {
+        healthDisplay.text = health.ToString();
+
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+        
         if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHeight) {
             targetPos = new Vector2(transform.position.x, transform.position.y + Yincrement);
             
